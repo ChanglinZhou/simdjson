@@ -27,7 +27,7 @@ if [ ! -d build-$variant ] ; then
 	  -DSIMDJSON_COMPETITION=OFF \
 	  -DSIMDJSON_GOOGLE_BENCHMARKS=OFF \
 	  -DSIMDJSON_FUZZ_LINKMAIN=On \
-	  -DSIMDJSON_IMPLEMENTATION_HASWELL=0
+	  -DSIMDJSON_EXCLUDE_IMPLEMENTATION=haswell
     
     ninja all_fuzzers
     cd ..
@@ -75,7 +75,7 @@ if [ ! -d build-$variant ] ; then
 	  -DSIMDJSON_GOOGLE_BENCHMARKS=OFF \
 	  -DSIMDJSON_FUZZ_LINKMAIN=Off \
 	  -DSIMDJSON_FUZZ_LDFLAGS=$LIB_FUZZING_ENGINE \
-	  -DSIMDJSON_IMPLEMENTATION_HASWELL=0
+	  -DSIMDJSON_EXCLUDE_IMPLEMENTATION=haswell
     
     ninja all_fuzzers
     cd ..
@@ -105,7 +105,7 @@ if which clang++-9 >/dev/null 2>&1 ; then
 	      -DSIMDJSON_GOOGLE_BENCHMARKS=OFF \
 	      -DSIMDJSON_FUZZ_LINKMAIN=Off \
 	      -DSIMDJSON_FUZZ_LDFLAGS=$LIB_FUZZING_ENGINE \
-	      -DSIMDJSON_IMPLEMENTATION_HASWELL=0
+			  -DSIMDJSON_EXCLUDE_IMPLEMENTATION=haswell
 	
 	ninja all_fuzzers
 	cd ..
